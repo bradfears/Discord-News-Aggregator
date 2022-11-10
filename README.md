@@ -22,8 +22,10 @@ PHP script (to be used with cron) for posting news stories to a Discord channel.
   c. Toggle _Developer Mode_  
   d. Hit Esc and go back to your list of channels  
   e. Right-click on your desired channel and click _Copy ID_ (you will need to add this to your code)  
-5. Get your Discord authorization token by following the instructions on [this page](https://linuxhint.com/get-discord-token/)  
+4. Get your Discord authorization token by following the instructions on [this page](https://linuxhint.com/get-discord-token/)  
   a. You will need to add the authorization token to your code  
+5. Open webhook.php and change the first three variables ($channel_id, $webhook_url, and $auth_code)  
+  a. You should already have these values from previous preparation steps
   
 ## Test the code
 1. Run the webhook.php from the command line or terminal
