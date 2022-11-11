@@ -1,10 +1,11 @@
 # Discord-News-Aggregator
-PHP script (to be used with cron) for posting news stories to a Discord channel.
+PHP script (to be used with cron) for posting news stories to a Discord channel
 
 ## Requirements
 1. Discord server (you can create your own)
-2. Web host with PHP cli cron support
-3. Knowledge of PHP
+2. Newsdata.io api key
+3. Web host with PHP cli cron support
+4. Knowledge of PHP
 
 ## Preparation
 
@@ -24,8 +25,10 @@ PHP script (to be used with cron) for posting news stories to a Discord channel.
   e. Right-click on your desired channel and click _Copy ID_ (you will need to add this to your code)  
 4. Get your Discord authorization token by following the instructions on [this page](https://linuxhint.com/get-discord-token/)  
   a. You will need to add the authorization token to your code  
-5. Open webhook.php and change the first three variables ($channel_id, $webhook_url, and $auth_code)  
-  a. You should already have these values from previous preparation steps
+5. Register for a [Newsdata.io API key](https://newsdata.io/register)  
+6. Open webhook.php and change the first three variables:  
+  a. ($channel_id, $webhook_url, $auth_code, $news_api_key, $news_language, $news_query)  
+  b. You should already have most of these values from previous preparation steps  
   
 ## Test the code
 1. Run the webhook.php from the command line or terminal
@@ -34,6 +37,6 @@ PHP script (to be used with cron) for posting news stories to a Discord channel.
 
 ## Schedule a job to run the script
 1. Using cron (provided by your web host), create a job similar to the following  
-`*/10  *  *  *  *  /usr/local/bin/php /path/to/webhook.php >/dev/null 2>&1`
-2. **Important Note:** Schedule the jobs to run at least 10 minutes apart so new stories will create a new thread in the channel
-  a. Otherwise, Discord will just treat each news story like a reply to the previous story
+`*/10  *  *  *  *  /usr/local/bin/php /path/to/webhook.php >/dev/null 2>&1`  
+2. **Important Note:** Schedule the jobs to run at least 10 minutes apart so new stories will create a new thread in the channel  
+  a. Otherwise, Discord will just treat each news story like a reply to the previous story  
